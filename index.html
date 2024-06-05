@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- <script src="index.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <button class="geo-btn">click here to generate random numbers</button>
+        <div class="showDetails">
+            <p>Random Numbers are:</p>
+            <p class="latitude"></p>
+            <p class="longitude"></p>
+            
+        </div>
+    </div>
+
+    <script>
+        const latitudeElement = document.querySelector(".latitude");
+        const longitudeElement = document.querySelector(".longitude");
+
+        document.querySelector(".geo-btn").addEventListener("click", () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+                        latitudeElement.textContent = `Number1: ${latitude}`;
+                        longitudeElement.textContent = `Number2: ${longitude}`;
+                       
+
+                    },
+                    (error) => {
+                        latitudeElement.textContent = error.message;
+                        longitudeElement.textContent = '';
+                    }
+                );
+            }
+        });
+    </script>
+</body>
+</html>

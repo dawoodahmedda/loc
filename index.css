@@ -1,0 +1,35 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.geo-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: blue;
+  border-color: blue;
+}
+
+.showDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px 10px;
+  color: black;
+}
+
+.showDetails p {
+  margin: 5px 0;
+}
